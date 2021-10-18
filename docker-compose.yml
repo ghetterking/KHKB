@@ -40,7 +40,7 @@ services:
             WORDPRESS_DB_HOST: mysql_db:3306
             WORDPRESS_DB_USER: oppdev2021 # needs to be the same like service.mysql_db.environment.MYSQL_USER
             WORDPRESS_DB_PASSWORD: Opport2021 # needs to be the same like service.mysql_db.environment.MYSQL_PASSWORD
-            WORDPRESS_DB_NAME: proj_wp_shoe_shop_db # needs to be the same name as in service.mysql_db.environment.MYSQL_DATABASE
+            WORDPRESS_DB_NAME: oppdatabase # needs to be the same name as in service.mysql_db.environment.MYSQL_DATABASE
             WORDPRESS_TABLE_PREFIX: pwr_db_ # to avoid the have the default prefix for table names 'wp_', which would be too common
         working_dir: /var/www/html # virtual path to the container where wordpress is beeing developped
         volumes:

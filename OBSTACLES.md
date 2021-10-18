@@ -1,0 +1,5 @@
+1. My flatmate isn't always available, so sometimes I have to just make decisions of my own for now even when it comes to design related stuff, because i can't lose too much time and sometimes it's not even that relevant anyway or i can change it later easily.
+2. Decisions on what to put on GitHub, trello, google drive or local can get a bit a handful.
+3. Wordpress and GitHub are surprisingly less than compatible. you can force it, yes, but it's quite a bit of work that otherwise isnt needed. Why Wordpress creates protected folders and files everywhere and why GitHub can't cope with it efficiently is beyond me.
+4. Installing Wordpress only works if I use an old docker-compose.yml file, which can be corrupt if you mess sth up like I seemingly did. We get that file here for this purpose, but I'm not sure if I could pull this off at home without that help, even if I did google like crazy.
+5. 
