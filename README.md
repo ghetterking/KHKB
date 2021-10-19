@@ -14,4 +14,4 @@ How I made it run on Ubuntu:
 9. Update, maybe download necessary themes and plugins, finally click visit site when hovering over the house symbol to check out my site if that's what you're here for.
 10. Some themes and plugins i've used: Blocksy, Astra, Elementor, Starter Templates, Smooth Back to Top Button, Magento and Woocommerce and "akismet antispam", but i delete "Hello Dolly" usually.
 
-have fun, go crazy
+have fun, go crazy  22
