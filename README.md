@@ -12,6 +12,6 @@ How I made it run on Ubuntu:
 7. Open terminal in the folder that docker-compose.yml is located in (as seen in my repo) and run $ docker-compose up -d
 8. Now open localhost:8080 (troubleshoot this in OBSTACLES.md file), this should bring you to the installation screen of wordpress and allow you to create your own login for wordpress after having entered the correct data that you can find in docker-compose.yml, or if you want to edit my site use "KHKB" as both your login data.
 9. Update, maybe download necessary themes and plugins, finally click visit site when hovering over the house symbol to check out my site if that's what you're here for.
-10. Some themes and plugins i've used: Blocksy, Astra, Elementor, Starter Templates, Smooth Back to Top Button, Magento and Woocommerce and "akismet antispam", but i delete "Hello Dolly" usually.
+10. Some themes and plugins i've used: Blocksy, Astra, Elementor, Starter Templates, Smooth Back to Top Button, Magento,  and Woocommerce and "akismet antispam", but i delete "Hello Dolly" usually.
 
-have fun, go crazy  22
+have fun, go crazy
