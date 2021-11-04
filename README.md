@@ -10,8 +10,7 @@ How I made it run on Ubuntu:
 5. If you have cloned my entire repo, jump to step 7. otherwise, download or create your own docker-compose.yml file which will enable you to install and run wordpress, then put it into the folder you created and named last.
 6. To double check if you put it into the right folder and did the git setup correctly, add, commit and push as usual and check on the website. If it's right there and not in some folder you may have created superfluously, you did well.
 7. Open terminal in the folder that docker-compose.yml is located in (as seen in my repo) and run $ docker-compose up -d
-8. Now open localhost:8080 (troubleshoot this in OBSTACLES.md file), this should bring you to the installation screen of wordpress and allow you to create your own login for wordpress after having entered the correct data that you can find in docker-compose.yml, or if you want to edit my site use "KHKB" as both your login data.
+8. Now open localhost:8080 (troubleshoot this in OBSTACLES.md file at point 5.), this should bring you to the installation screen of wordpress and allow you to create your own login for wordpress after having entered the correct data that you can find in docker-compose.yml, or if you want to edit my site use "KHKB" as both your login data.
 9. Update, maybe download necessary themes and plugins, finally click visit site when hovering over the house symbol to check out my site if that's what you're here for.
-10. Some themes and plugins i've used: Blocksy, Astra, Elementor, Starter Templates, Smooth Back to Top Button, Magento,  and Woocommerce and "akismet antispam", but i delete "Hello Dolly" usually.
-
+10. Some themes and plugins i've used: Blocksy, Astra, Elementor Website Builder, Starter Templates, Smooth Back to Top Button, Startinger, Ajax Search Lite, Mappress Maps for Wordpress, Multiple Themes, Visual Portfolio Posts & Image Gallery, WP Dark Mode, Woocommerce and "akismet antispam", but i specifically delete the pre-installed "Hello Dolly" usually.
 have fun, go crazy
