@@ -1,4 +1,3 @@
-# KHKB
 Kunsthallekleinbasel Generalüberholung der bisherigen Webseite
 
 How I made it run on Ubuntu:
