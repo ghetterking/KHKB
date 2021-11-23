@@ -256,7 +256,7 @@ class Visual_Portfolio_Custom_Post_Type {
 
         global $wp_version;
 
-        $check_string = 'Plugin: 2.15.0 WP: ' . $wp_version;
+        $check_string = 'Plugin: 2.15.3 WP: ' . $wp_version;
 
         if ( get_option( 'visual_portfolio_updated_caps' ) === $check_string ) {
             return;
@@ -637,10 +637,12 @@ class Visual_Portfolio_Custom_Post_Type {
             // Don't use WP_Query on the admin side https://core.trac.wordpress.org/ticket/18408 .
             $vp_query = get_posts(
                 array(
-                    'post_type'      => 'vp_lists',
-                    'posts_per_page' => -1,
-                    'paged'          => -1,
-                    'post__in'       => $layouts,
+                    'post_type'              => 'vp_lists',
+                    'posts_per_page'         => -1,
+                    'paged'                  => -1,
+                    'post__in'               => $layouts,
+                    'update_post_meta_cache' => false,
+                    'update_post_term_cache' => false,
                 )
             );
             foreach ( $vp_query as $post ) {
@@ -729,7 +731,7 @@ class Visual_Portfolio_Custom_Post_Type {
             esc_html__( 'Documentation', 'visual-portfolio' ),
             esc_html__( 'Documentation', 'visual-portfolio' ),
             'manage_options',
-            'https://visualportfolio.co/documentation/getting-started/'
+            'https://visualportfolio.co/documentation/getting-started/?utm_source=plugin&utm_medium=admin_menu&utm_campaign=docs&utm_content=2.15.3'
         );
     }
 
@@ -773,7 +775,7 @@ class Visual_Portfolio_Custom_Post_Type {
                                 </h3>
                                 <div>
                                     <p><?php echo esc_html__( 'Send a collection of photographs to your client for approval.', 'visual-portfolio' ); ?></p>
-                                    <a class="vpf-settings-info-pro-button" target="_blank" rel="noopener noreferrer" href="https://visualportfolio.co/pro/?utm_source=freeplugin&amp;utm_medium=link&amp;utm_campaign=plugin_settings&amp;utm_content=2.15.0">
+                                    <a class="vpf-settings-info-pro-button" target="_blank" rel="noopener noreferrer" href="https://visualportfolio.co/pro/?utm_source=plugin&amp;utm_medium=settings_page&amp;utm_campaign=proofing&amp;utm_content=2.15.3">
                                     <?php echo esc_html__( 'Read More', 'visual-portfolio' ); ?>
                                     </a>
                                 </div>

@@ -88,7 +88,7 @@ class Visual_Portfolio_Welcome_Screen {
                     <div>
                         <?php
                         // translators: %s - pro link.
-                        echo sprintf( esc_html__( 'Want to get more power with Pro? Visit %s', 'visual-portfolio' ), '<a target="_blank" rel="noopener noreferrer" href="https://visualportfolio.co/pro/?utm_source=plugin_welcome&utm_medium=link&utm_campaign=pro&utm_content=2.15.0">visualportfolio.co/pro</a>' );
+                        echo sprintf( esc_html__( 'Want to get more power with Pro? Visit %s', 'visual-portfolio' ), '<a target="_blank" rel="noopener noreferrer" href="https://visualportfolio.co/pro/?utm_source=plugin&utm_medium=welcome_page&utm_campaign=go_pro_head&utm_content=2.15.3">visualportfolio.co/pro</a>' );
                         ?>
                     </div>
                 </div>
@@ -146,8 +146,8 @@ class Visual_Portfolio_Welcome_Screen {
                 <hr>
 
                 <div class="vpf-welcome-content-buttons">
-                    <a target="_blank" rel="noopener noreferrer" href="https://visualportfolio.co/?utm_source=plugin_welcome&utm_medium=link&utm_campaign=demo&utm_content=2.15.0"><?php echo esc_html__( 'More Features', 'visual-portfolio' ); ?></a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://visualportfolio.co/documentation/getting-started/?utm_source=plugin_welcome&utm_medium=link&utm_campaign=docs&utm_content=2.15.0"><?php echo esc_html__( 'Documentation', 'visual-portfolio' ); ?></a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://visualportfolio.co/?utm_source=plugin&utm_medium=welcome_page&utm_campaign=more_features&utm_content=2.15.3"><?php echo esc_html__( 'More Features', 'visual-portfolio' ); ?></a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://visualportfolio.co/documentation/getting-started/?utm_source=plugin&utm_medium=welcome_page&utm_campaign=docs&utm_content=2.15.3"><?php echo esc_html__( 'Documentation', 'visual-portfolio' ); ?></a>
                 </div>
             </div>
 
@@ -169,7 +169,7 @@ class Visual_Portfolio_Welcome_Screen {
                     <li><?php echo esc_html__( 'White Label', 'visual-portfolio' ); ?></li>
                     <li><?php echo esc_html__( 'And much more...', 'visual-portfolio' ); ?></li>
                 </ul>
-                <a target="_blank" rel="noopener noreferrer" href="https://visualportfolio.co/pro/?utm_source=plugin_welcome&utm_medium=link&utm_campaign=pro&utm_content=2.15.0"><?php echo esc_html__( 'Upgrade to PRO Now', 'visual-portfolio' ); ?></a>
+                <a target="_blank" rel="noopener noreferrer" href="https://visualportfolio.co/pro/?utm_source=plugin&utm_medium=welcome_page&utm_campaign=go_pro_foot&utm_content=2.15.3"><?php echo esc_html__( 'Upgrade to PRO Now', 'visual-portfolio' ); ?></a>
             </div>
         </div>
         <?php

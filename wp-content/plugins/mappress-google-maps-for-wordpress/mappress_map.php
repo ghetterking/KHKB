@@ -19,6 +19,7 @@ class Mappress_Map extends Mappress_Obj {
 		$poiList,
 		$postid,
 		$query,
+		$search,
 		$status,
 		$title,
 		$width,
@@ -28,7 +29,7 @@ class Mappress_Map extends Mappress_Obj {
 	var $pois = array();
 
 	function __sleep() {
-		return array('mapid', 'center', 'height', 'mapTypeId', 'metaKey', 'pois', 'status', 'title', 'width', 'zoom');
+		return array('mapid', 'center', 'height', 'mapTypeId', 'metaKey', 'pois', 'search', 'status', 'title', 'width', 'zoom');
 	}
 
 	function __construct($atts = null) {
@@ -83,7 +84,8 @@ class Mappress_Map extends Mappress_Obj {
 	}
 
 	static function media_buttons($editor_id) {
-		echo '<div class="mapp-mce"></div>';
+		$button = sprintf("<button type='button' class='button wp-media-buttons-icon mapp-mce-button'><span class='dashicons dashicons-location'></span>%s</button>", __('MapPress', 'mappress-google-maps-for-wordpress'));
+		echo "<div class='mapp-mce'>$button</div>";
 	}
 
 	static function duplicate($mapid, $postid) {

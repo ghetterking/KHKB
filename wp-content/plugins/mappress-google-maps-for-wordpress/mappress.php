@@ -4,7 +4,7 @@ Plugin Name: MapPress Maps for WordPress
 Plugin URI: https://www.mappresspro.com
 Author URI: https://www.mappresspro.com
 Description: MapPress makes it easy to add Google and Leaflet Maps to WordPress
-Version: 2.70.1
+Version: 2.71.2
 Author: Chris Richardson
 Text Domain: mappress-google-maps-for-wordpress
 Thanks to all the translators and to Scott DeJonge for his wonderful icons
@@ -36,7 +36,7 @@ if (is_dir(dirname( __FILE__ ) . '/pro')) {
 }
 
 class Mappress {
-	const VERSION = '2.70.1';
+	const VERSION = '2.71.2';
 
 	static
 		$baseurl,
@@ -170,7 +170,7 @@ class Mappress {
 			$page = 'library';
 		else if ($hook == self::$pages[3])
 			$page = 'support';
-		else if (in_array($hook, array('customize.php', 'appearance_page_gutenberg-widgets')))
+		else if (in_array($hook, array('customize.php', 'appearance_page_gutenberg-widgets', 'appearance_page_gutenberg-edit-site')))
 			$page = 'customizer';
 		else if (in_array($hook, array('plugins.php')))
 			$page = 'plugins';
@@ -673,7 +673,7 @@ class Mappress {
 		// Global settings
 		$options = array('alignment', 'clustering', 'clusteringOptions', 'country', 'defaultIcon', 'directions', 'directionsServer',
 		'engine', 'filters', 'geocoder', 'highlight', 'highlightIcon', 'iconScale', 'initialOpenInfo', 'layout',
-		'mashupClick', 'mini', 'poiList', 'poiZoom', 'radius', 'scrollWheel', 'search', 'searchBox', 'size', 'sizes', 'style', 'thumbs', 'thumbsList', 'thumbsPopup', 'tooltips', 'userLocation');
+		'mashupClick', 'mini', 'poiList', 'poiListOpen', 'poiListPageSize', 'poiZoom', 'radius', 'scrollWheel', 'search', 'searchBox', 'size', 'sizes', 'style', 'thumbs', 'thumbsList', 'thumbsPopup', 'tooltips', 'userLocation');
 
 		foreach($options as $option) {
 			if (isset(self::$options->$option)) {
@@ -761,7 +761,7 @@ class Mappress {
 		wp_register_script('mappress-leaflet-markercluster', $lib . "/Leaflet.markercluster/leaflet.markercluster.js", null, '1.4.1', $footer);
 
 		// Dependencies
-		$deps = array('jquery', 'jquery-ui-autocomplete', 'underscore');
+		$deps = array('jquery', 'jquery-ui-autocomplete', 'underscore', 'wp-element', 'wp-i18n');
 		if (self::$options->engine == 'leaflet')
 			$deps = array_merge(array('mappress-leaflet', 'mappress-omnivore'), $deps);
 		if (self::$options->engine != 'leaflet' || self::$options->geocoder == 'google')

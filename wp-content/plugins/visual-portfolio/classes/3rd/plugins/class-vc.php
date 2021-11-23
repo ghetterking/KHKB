@@ -35,7 +35,7 @@ class Visual_Portfolio_3rd_VC {
      */
     public function admin_enqueue_scripts( $page ) {
         if ( 'post.php' === $page || 'post-new.php' === $page ) {
-            wp_enqueue_script( 'visual-portfolio-vc-frontend', visual_portfolio()->plugin_url . 'assets/admin/js/vc-frontend.min.js', array( 'jquery' ), '2.15.0', true );
+            wp_enqueue_script( 'visual-portfolio-vc-frontend', visual_portfolio()->plugin_url . 'assets/admin/js/vc-frontend.min.js', array( 'jquery' ), '2.15.3', true );
         }
     }
 
@@ -48,9 +48,11 @@ class Visual_Portfolio_3rd_VC {
             // Don't use WP_Query on the admin side https://core.trac.wordpress.org/ticket/18408 .
             $vp_query = get_posts(
                 array(
-                    'post_type'      => 'vp_lists',
-                    'posts_per_page' => -1,
-                    'paged'          => -1,
+                    'post_type'              => 'vp_lists',
+                    'posts_per_page'         => -1,
+                    'paged'                  => -1,
+                    'update_post_meta_cache' => false,
+                    'update_post_term_cache' => false,
                 )
             );
 

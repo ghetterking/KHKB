@@ -4,8 +4,8 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: maps, google maps, map, map markers, google map, leaflet maps, leaflet map plugin, google maps plugin, wp google maps, wp google map, map plugin, store locator, google map plugin, map widget,
 Requires at least: 5.3
 Requires PHP: 5.6
-Tested up to: 5.8
-Stable tag: 2.70.1
+Tested up to: 5.9
+Stable tag: 2.71.2
 
 == Description ==
 MapPress is the easiest way to add beautiful interactive Google and Leaflet maps to WordPress.
@@ -89,9 +89,25 @@ Please see the plugin documentation pages:
 
 == Changelog ==
 
+= 2.71.2 =
+* Fixed: full-site editing not working
+
+= 2.71.1 =
+* Added: option for POI list page size
+* Added: option for POI list open/closed when map is loaded
+* Fixed: directions not working on Android
+
+= 2.71 =
+* Added: enable search for individual maps
+* Added: classic editor button updated for compatibility with Enfold theme
+* Changed: remove initialOpenDirections parameter
+* Changed: speed up Nominatim autocomplete
+* Changed: internal updates to ES6 JS for options and maps
+
 = 2.70.1 =
 * Changed: clearer highlighting in map list
 * Changed: remove beta version
+* Changed: remove IE11 support
 
 = 2.70 =
 * Added: maps can now be trashed or restored

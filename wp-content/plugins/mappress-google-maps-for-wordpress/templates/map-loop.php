@@ -19,13 +19,11 @@
 	<# }); #>
 </div>
 
-<# //if (map.layout || mappl10n.options.layout == 'left') { #>
-
-<# if (pagination.count > pagination.pageSize) { // Only show pagination if >1 page #>
+<# if (pagination.count > pageSize) { // Only show pagination if >1 page #>
 <div class='mapp-list-footer'>
 	<div class='mapp-paginate'>
 		<#
-			const pages = Math.ceil(pagination.count / pagination.pageSize);
+			const pages = Math.ceil(pagination.count / pageSize);
 			let prevClass = (pagination.page <= 1) ? 'mapp-paginate-button mapp-disabled' : 'mapp-paginate-button';
 			let prevAction = (pagination.page <= 1) ? '' : 'page';
 			let nextClass = (pagination.page >= pages) ? 'mapp-paginate-button mapp-disabled' : 'mapp-paginate-button';

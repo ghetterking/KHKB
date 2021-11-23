@@ -44,9 +44,9 @@ class Visual_Portfolio_Admin {
             'nonce' => wp_create_nonce( 'vp-ajax-nonce' ),
         );
 
-        wp_enqueue_script( 'visual-portfolio-admin', visual_portfolio()->plugin_url . 'assets/admin/js/script.min.js', array( 'jquery', 'wp-data' ), '2.15.0', true );
+        wp_enqueue_script( 'visual-portfolio-admin', visual_portfolio()->plugin_url . 'assets/admin/js/script.min.js', array( 'jquery', 'wp-data' ), '2.15.3', true );
         wp_localize_script( 'visual-portfolio-admin', 'VPAdminVariables', $data_init );
-        wp_enqueue_style( 'visual-portfolio-admin', visual_portfolio()->plugin_url . 'assets/admin/css/style.min.css', array(), '2.15.0' );
+        wp_enqueue_style( 'visual-portfolio-admin', visual_portfolio()->plugin_url . 'assets/admin/css/style.min.css', array(), '2.15.3' );
         wp_style_add_data( 'visual-portfolio-admin', 'rtl', 'replace' );
         wp_style_add_data( 'visual-portfolio-admin', 'suffix', '.min' );
     }
@@ -60,8 +60,8 @@ class Visual_Portfolio_Admin {
         );
 
         if ( 'vp_lists' === get_post_type() ) {
-            wp_enqueue_script( 'visual-portfolio-saved-layouts', visual_portfolio()->plugin_url . 'gutenberg/layouts-editor.min.js', array( 'jquery' ), '2.15.0', true );
-            wp_enqueue_style( 'visual-portfolio-saved-layouts', visual_portfolio()->plugin_url . 'gutenberg/layouts-editor.min.css', array(), '2.15.0' );
+            wp_enqueue_script( 'visual-portfolio-saved-layouts', visual_portfolio()->plugin_url . 'gutenberg/layouts-editor.min.js', array( 'jquery' ), '2.15.3', true );
+            wp_enqueue_style( 'visual-portfolio-saved-layouts', visual_portfolio()->plugin_url . 'gutenberg/layouts-editor.min.css', array(), '2.15.3' );
             wp_style_add_data( 'visual-portfolio-saved-layouts', 'rtl', 'replace' );
             wp_style_add_data( 'visual-portfolio-saved-layouts', 'suffix', '.min' );
 
@@ -198,7 +198,7 @@ class Visual_Portfolio_Admin {
         return array_merge(
             $links,
             array(
-                '<a target="_blank" href="admin.php?page=visual_portfolio_go_pro">' . esc_html__( 'Go Pro', 'visual-portfolio' ) . '</a>',
+                '<a target="_blank" href="admin.php?page=visual_portfolio_go_pro&utm_medium=plugins_list">' . esc_html__( 'Go Pro', 'visual-portfolio' ) . '</a>',
             )
         );
     }
@@ -215,8 +215,16 @@ class Visual_Portfolio_Admin {
 
         // phpcs:ignore
         if ( 'visual_portfolio_go_pro' === $_GET['page'] ) {
+            $medium = 'admin_menu';
+
             // phpcs:ignore
-            wp_redirect( 'https://visualportfolio.co/pro/?utm_source=freeplugin&utm_medium=link&utm_campaign=admin_page&utm_content=2.15.0' );
+            if ( isset( $_GET['utm_medium'] ) ) {
+                // phpcs:ignore
+                $medium = $_GET['utm_medium'];
+            }
+
+            // phpcs:ignore
+            wp_redirect( 'https://visualportfolio.co/pro/?utm_source=plugin&utm_medium=' . esc_attr( $medium ) . '&utm_campaign=go_pro&utm_content=2.15.3' );
             exit();
         }
     }

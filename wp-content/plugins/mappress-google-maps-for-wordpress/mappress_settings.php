@@ -40,6 +40,8 @@ class Mappress_Options extends Mappress_Obj {
 		$metaSyncSave = true,
 		$mini = 400,
 		$poiList = true,
+		$poiListPageSize = 20,
+		$poiListOpen = true,
 		$poiZoom = 15,
 		$postTypes = array('post', 'page'),
 		$radius = 15,
@@ -140,14 +142,19 @@ class Mappress_Settings {
 
 		ob_start();
 
-		// Note that WP adds extra slashes to post data, removed with wp_unslash()
+		// WP adds extra slashes to post data
 		$settings = (isset($_POST['settings'])) ? (object) wp_unslash($_POST['settings']) : null;
+
 		if (!$settings)
 			Mappress::ajax_response('Internal error, missing settings!');
 
 		// Convert JS object arrays to PHP associative arrays
 		self::assoc($settings->autoicons['values'], true);
 		self::assoc($settings->metaKeys, true);
+
+		// If no post types set, the empty array isn't sent, so default it
+		if (!isset($settings->postTypes))
+			$settings->postTypes = array();
 
 		// If license changed, clear cache so it re-checks on next load
 		if ($settings->license && $settings->license != Mappress::$options->license)

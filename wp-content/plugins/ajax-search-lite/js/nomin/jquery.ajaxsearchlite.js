@@ -117,6 +117,8 @@
             if ( ASL.js_retain_popstate == 1 )
                 $this.initPrevState();
 
+            $this.monitorTouchMove();
+
             if (detectOldIE())
                 $this.n.container.addClass('asl_msie');
 
@@ -176,16 +178,14 @@
             });
         },
 
-        duplicateCheck: function() {
-            var $this = this;
-            var duplicateChk = {};
-
-            $('div[id*=ajaxsearchlite]').each (function () {
-                if (duplicateChk.hasOwnProperty(this.id)) {
-                    $(this).remove();
-                } else {
-                    duplicateChk[this.id] = 'true';
-                }
+        monitorTouchMove: function() {
+            var $this = this, $b = $("body");
+            $this.dragging = false;
+            $b.on("touchmove", function(){
+                $this.dragging = true;
+            });
+            $b.on("touchstart", function(){
+                $this.dragging = false;
             });
         },
 
@@ -311,7 +311,6 @@
 
         createVerticalScroll: function () {
             var $this = this;
-
             if ( $this.is_scroll && typeof $this.scroll.recalculate === 'undefined' ) {
                 $this.scroll = new asl_SimpleBar($this.n.results.get(0), {
                     direction: $('body').hasClass('rtl') ? 'rtl' : 'ltr',

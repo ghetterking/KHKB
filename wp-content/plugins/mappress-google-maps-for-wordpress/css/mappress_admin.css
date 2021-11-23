@@ -73,7 +73,12 @@
 */
 
 .mapp-mce {
-	display: inline;
+	display: inline-block;
+}
+
+.mapp-mce button.mapp-mce-button {
+	display: flex;
+	align-items: center;
 }
 
 /*
@@ -532,14 +537,17 @@
 	-----------------------------------------------------------------------------------
 */
 
-.mapp-settings-title {
+.mapp-settings-row {
 	display: flex;
-	overflow: hidden;
+	margin-bottom: 15px;
 }
 
-.mapp-settings-title .components-base-control__field {
-	overflow: hidden;
-	text-overflow: ellipsis;
+.mapp-settings-title {
+	justify-content: space-between;
+}
+
+.mapp-settings-title label {
+	font-weight: 500;
 }
 
 .mapp-settings-title input {
@@ -550,27 +558,13 @@
 	white-space: nowrap;
 }
 
-/* GT tries to set flex on selects, and custom arrow obscures values */
-.mapp-settings-dims-select, .mapp-settings-type {
-	display: block !important;
-	min-width: 7em;
-}
-
 .mapp-settings-dims-custom input {
-	margin-top: 2px;
+	width: 100%;
 }
 
-.mapp-settings-dims-custom p {
-	margin-bottom: 0;
-}
-
-.mapp-settings-viewport {
-	margin-top: 5px;
-}
 
 .mapp-settings-viewport .components-button-group {
 	display: block;
-	margin-top: 8px;
 }
 
 .mapp-settings-viewport-status {
@@ -933,6 +927,60 @@ html.mapp-iframe {
 
 /*
 	-----------------------------------------------------------------------------------
+	Generic controls
+	-----------------------------------------------------------------------------------
+*/
+
+div.mapp-control {
+	display: inline-block;
+}
+
+.mapp-control label {
+	align-items:center;
+	display: inline-flex;
+}
+
+/* Nested components (checkboxes & radios) */
+.mapp-control-checkbox label, .mapp-control-radio label {
+	margin-right: 20px;
+}
+
+/* Try to remove some WP styling */
+.mapp-control input[type="radio"], .mapp-control input[type="checkbox"] {
+	margin: 0;
+}
+
+.mapp-control label span {
+	margin: 0 5px;
+}
+
+.mapp-help-text {
+	font-style: italic;
+}
+
+.mapp-help-link {
+	display: inline-block;
+	text-decoration: none;
+	vertical-align: baseline;
+}
+
+.mapp-help-warning {
+	border: 1px solid lightgray;
+	border-left: 4px solid #dba617;
+	margin-top: 10px;
+	padding: 10px;
+}
+
+.mapp-help-error {
+	border: 1px solid lightgray;
+	border-left: 4px solid #d63638;
+	margin-top: 10px;
+	padding: 10px;
+}
+
+
+/*
+	-----------------------------------------------------------------------------------
 	GT options page
 	-----------------------------------------------------------------------------------
 */
@@ -1037,12 +1085,6 @@ html.mapp-iframe {
 
 .mapp-option-value label { white-space: nowrap; }
 
-.mapp-option-label {
-	margin-left: 5px;
-	margin-right: 10px;
-	white-space: nowrap;
-}
-
 @media only screen and (max-width: 780px) {
 	.mapp-option {
 		display: block;
@@ -1057,10 +1099,6 @@ html.mapp-iframe {
 		display: block;
 	}
 
-}
-
-.mapp-options label {
-	margin-right: 20px;
 }
 
 button.mapp-options-save {
@@ -1095,31 +1133,6 @@ button.mapp-options-save {
 .mapp-options .mapp-grid-styles .mapp-grid-cell-value { width: 100%; }
 .mapp-options .mapp-grid-styles .mapp-grid-cell-value textarea { width: 100%; }
 .mapp-options .mapp-grid-styles .mapp-grid-cell-value textarea:focus { min-height: 20em }
-
-.mapp-options .mapp-help-text {
-	font-style: italic;
-	padding-top: 10px;
-}
-
-.mapp-options .mapp-help-link {
-	display: inline-block;
-	text-decoration: none;
-	vertical-align: baseline;
-}
-
-.mapp-options .mapp-help-warning {
-	border: 1px solid lightgray;
-	border-left: 4px solid #dba617;
-	margin-top: 10px;
-	padding: 10px;
-}
-
-.mapp-option .mapp-help-error {
-	border: 1px solid lightgray;
-	border-left: 4px solid #d63638;
-	margin-top: 10px;
-	padding: 10px;
-}
 
 .mapp-option-mapbox {
 	align-items: center;
@@ -1160,7 +1173,7 @@ button.mapp-options-save {
 }
 
 
-.mapp-option-poilist-radios {
+.mapp-option-poilist-radios, .mapp-option-poilist-open, .mapp-option-poilist-page-size {
 	margin-top: 10px;
 }
 
@@ -1840,8 +1853,9 @@ button.mapp-icons-edit-set-color {
 
 
 /* Style control in settings panel */
-.components-panel__row.mapp-style-toggle {
-	align-items: center !important;
+.mapp-settings-row.mapp-style-toggle {
+	align-items: center;
+	justify-content: space-between;
 }
 
 /* Style control in map editor */
@@ -2299,6 +2313,7 @@ a.mapp-deactivate-help {
 	opacity: 0;
 	padding: 20px;
 	position: fixed;
+	z-index: 100;
 }
 
 .mapp-snackbar-show {

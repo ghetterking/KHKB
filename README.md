@@ -1,5 +1,5 @@
 # KHKB
-Kunsthalle Kleinbasel Generalüberholung der bisherigen Website, da veraltet und simplistisch.
+Kunsthallekleinbasel Generalüberholung der bisherigen Webseite
 
 How I made it run on Ubuntu:
 
@@ -13,4 +13,7 @@ How I made it run on Ubuntu:
 8. Now open localhost:8080 (troubleshoot this in OBSTACLES.md file at point 5.), this should bring you to the installation screen of wordpress and allow you to create your own login for wordpress after having entered the correct data that you can find in docker-compose.yml, or if you want to edit my site use "KHKB" as both your login data.
 9. Update, maybe download necessary themes and plugins, finally click visit site when hovering over the house symbol to check out my site if that's what you're here for.
 10. Some themes and plugins i've used: Blocksy, Astra, Elementor Website Builder, Starter Templates, Smooth Back to Top Button, Startinger, Ajax Search Lite, Mappress Maps for Wordpress, Multiple Themes, Visual Portfolio Posts & Image Gallery, WP Dark Mode, Woocommerce and "akismet antispam", but i specifically delete the pre-installed "Hello Dolly" usually.
+11. Trello (work process): https://trello.com/b/pnBGwZjP/khkb
 have fun, go crazy
+
+PS: I have also uploaded the entire thing as a zip file just to make sure wordpress doesnt forbid some parts from being uploaded.

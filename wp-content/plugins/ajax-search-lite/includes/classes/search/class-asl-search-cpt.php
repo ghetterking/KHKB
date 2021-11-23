@@ -1794,6 +1794,9 @@ if ( ! class_exists( 'ASL_Search_CPT' ) ) {
 						case "custom":
 							if ( $image_settings['image_custom_field'] != "" ) {
 								$val = get_post_meta( $post->id, $image_settings['image_custom_field'], true );
+								if ( is_array($val) && !empty($val) ) {
+									$val = reset($val);
+								}
 								if ( $val != null && $val != "" ) {
 									if ( is_numeric($val) ) {
 										$im = wp_get_attachment_image_url( $val, $size );

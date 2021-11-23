@@ -105,11 +105,11 @@ class Visual_Portfolio_Assets {
         foreach ( self::$stored_assets[ $type ] as $name => $data ) {
             if ( isset( $data['value'] ) && $data['value'] ) {
                 if ( 'script' === $type ) {
-                    wp_enqueue_script( $name, '', array(), '2.15.0', true );
+                    wp_enqueue_script( $name, '', array(), '2.15.3', true );
                 } elseif ( is_string( $data['value'] ) ) {
-                    visual_portfolio()->include_template_style( $name, $data['value'], array(), '2.15.0' );
+                    visual_portfolio()->include_template_style( $name, $data['value'], array(), '2.15.3' );
                 } else {
-                    wp_enqueue_style( $name, '', array(), '2.15.0' );
+                    wp_enqueue_style( $name, '', array(), '2.15.3' );
                 }
 
                 self::$stored_assets[ $type ]['value'] = false;
@@ -272,13 +272,13 @@ class Visual_Portfolio_Assets {
 
             // Enqueue custom CSS.
             if ( ! self::$head_css_included ) {
-                wp_register_style( $controls_css_handle, false, array(), '2.15.0' );
+                wp_register_style( $controls_css_handle, false, array(), '2.15.3' );
                 wp_enqueue_style( $controls_css_handle );
                 wp_add_inline_style( $controls_css_handle, $dynamic_styles ? $dynamic_styles : ' ' );
 
                 // Enqueue JS instead of CSS when rendering in <body> to prevent W3C errors.
             } elseif ( ! wp_script_is( $controls_css_handle, 'enqueued' ) ) {
-                wp_register_script( $controls_css_handle, false, array(), '2.15.0', true );
+                wp_register_script( $controls_css_handle, false, array(), '2.15.3', true );
                 wp_enqueue_script( $controls_css_handle );
                 wp_add_inline_script(
                     $controls_css_handle,
@@ -394,7 +394,7 @@ class Visual_Portfolio_Assets {
         // LazySizes.
         if ( apply_filters( 'vpf_enqueue_plugin_lazysizes', true ) ) {
             wp_register_script( 'lazysizes-object-fit-cover', visual_portfolio()->plugin_url . 'assets/js/lazysizes-object-fit-cover.min.js', array(), '4.1.0', true );
-            wp_register_script( 'lazysizes-config', visual_portfolio()->plugin_url . 'assets/js/lazysizes-cfg.min.js', array(), '2.15.0', true );
+            wp_register_script( 'lazysizes-config', visual_portfolio()->plugin_url . 'assets/js/lazysizes-cfg.min.js', array(), '2.15.3', true );
             wp_register_script( 'lazysizes', visual_portfolio()->plugin_url . 'assets/vendor/lazysizes/lazysizes.min.js', array( 'lazysizes-object-fit-cover', 'lazysizes-config' ), '5.2.2', true );
         }
 
@@ -442,7 +442,7 @@ class Visual_Portfolio_Assets {
         );
 
         foreach ( $vp_styles as $name => $data ) {
-            wp_register_style( $name, visual_portfolio()->plugin_url . $data[0], $data[1], '2.15.0' );
+            wp_register_style( $name, visual_portfolio()->plugin_url . $data[0], $data[1], '2.15.3' );
             wp_style_add_data( $name, 'rtl', 'replace' );
             wp_style_add_data( $name, 'suffix', '.min' );
         }
@@ -560,7 +560,7 @@ class Visual_Portfolio_Assets {
         );
 
         foreach ( $vp_scripts as $name => $data ) {
-            wp_register_script( $name, visual_portfolio()->plugin_url . $data[0], $data[1], '2.15.0', true );
+            wp_register_script( $name, visual_portfolio()->plugin_url . $data[0], $data[1], '2.15.3', true );
         }
 
         do_action( 'vpf_after_assets_register' );

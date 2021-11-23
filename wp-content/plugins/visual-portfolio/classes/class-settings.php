@@ -138,7 +138,7 @@ class Visual_Portfolio_Settings {
      */
     public static function admin_enqueue_scripts( $page ) {
         if ( 'portfolio_page_visual-portfolio-settings' === $page ) {
-            wp_enqueue_script( 'visual-portfolio-archive-page-selector', visual_portfolio()->plugin_url . 'assets/admin/js/archive-page-selector.min.js', array( 'jquery', 'select2' ), '2.15.0', true );
+            wp_enqueue_script( 'visual-portfolio-archive-page-selector', visual_portfolio()->plugin_url . 'assets/admin/js/archive-page-selector.min.js', array( 'jquery', 'select2' ), '2.15.3', true );
         }
     }
 
@@ -608,7 +608,7 @@ class Visual_Portfolio_Settings {
                             <h3>' . esc_html__( 'Pro Feature', 'visual-portfolio' ) . '</h3>
                             <div>
                                 <p>' . esc_html__( 'Protect your works using watermarks', 'visual-portfolio' ) . '</p>
-                                <a class="vpf-settings-info-pro-button" target="_blank" rel="noopener noreferrer" href="https://visualportfolio.co/pro/?utm_source=freeplugin&utm_medium=link&utm_campaign=plugin_settings&utm_content=2.15.0">' . esc_html__( 'Read More', 'visual-portfolio' ) . '</a>
+                                <a class="vpf-settings-info-pro-button" target="_blank" rel="noopener noreferrer" href="https://visualportfolio.co/pro/?utm_source=plugin&utm_medium=settings_page&utm_campaign=watermarks&utm_content=2.15.3">' . esc_html__( 'Read More', 'visual-portfolio' ) . '</a>
                             </div>
                         </div>
                     ',
@@ -623,7 +623,7 @@ class Visual_Portfolio_Settings {
                             <h3>' . esc_html__( 'Pro Feature', 'visual-portfolio' ) . '</h3>
                             <div>
                                 <p>' . esc_html__( 'Social feeds such as Instagram, Youtube, Flickr, Twitter, etc...', 'visual-portfolio' ) . '</p>
-                                <a class="vpf-settings-info-pro-button" target="_blank" rel="noopener noreferrer" href="https://visualportfolio.co/pro/?utm_source=freeplugin&utm_medium=link&utm_campaign=plugin_settings&utm_content=2.15.0">' . esc_html__( 'Read More', 'visual-portfolio' ) . '</a>
+                                <a class="vpf-settings-info-pro-button" target="_blank" rel="noopener noreferrer" href="https://visualportfolio.co/pro/?utm_source=plugin&utm_medium=settings_page&utm_campaign=social_feeds&utm_content=2.15.3">' . esc_html__( 'Read More', 'visual-portfolio' ) . '</a>
                             </div>
                         </div>
                     ',
@@ -638,7 +638,7 @@ class Visual_Portfolio_Settings {
                             <h3>' . esc_html__( 'Pro Feature', 'visual-portfolio' ) . '</h3>
                             <div>
                                 <p>' . esc_html__( 'Remove our plugin brand and logos from Front and Admin areas', 'visual-portfolio' ) . '</p>
-                                <a class="vpf-settings-info-pro-button" target="_blank" rel="noopener noreferrer" href="https://visualportfolio.co/pro/?utm_source=freeplugin&utm_medium=link&utm_campaign=plugin_settings&utm_content=2.15.0">' . esc_html__( 'Read More', 'visual-portfolio' ) . '</a>
+                                <a class="vpf-settings-info-pro-button" target="_blank" rel="noopener noreferrer" href="https://visualportfolio.co/pro/?utm_source=plugin&utm_medium=settings_page&utm_campaign=white_label&utm_content=2.15.3">' . esc_html__( 'Read More', 'visual-portfolio' ) . '</a>
                             </div>
                         </div>
                     ',
@@ -722,10 +722,12 @@ class Visual_Portfolio_Settings {
     public static function get_posts_ajax_callback() {
         $return     = array();
         $query_opts = array(
-            'post_status'         => 'publish',
-            'ignore_sticky_posts' => 1,
-            'posts_per_page'      => 50,
-            'post_type'           => 'page',
+            'post_status'            => 'publish',
+            'ignore_sticky_posts'    => 1,
+            'posts_per_page'         => 50,
+            'post_type'              => 'page',
+            'update_post_meta_cache' => false,
+            'update_post_term_cache' => false,
         );
 
         // phpcs:disable

@@ -4,7 +4,7 @@ Donate link: http://wp-dreams.com
 Tags: search, better wordpress search, search plugin, relevance search, widget, Post, ajax search, search filter, wp ajax search, custom fields search, better search, ajax search plugin, wp search, wp search plugin, filter, relevant search plugin, wordpress search, Live Search, shortcode, google, autocomplete, suggest, woocommerce, woocommerce search, product, product search, custom search, ajax, suggest, autosuggest, search autocomplete, live, plugin, sidebar, product tag search, products, woocommerce tag search, WooCommerce Plugin, shop, search by sku, relevant search, highlight, term, image, custom search, ecommerce, Predictive Search, search product, shop, typehead, suggest, instant-search
 Requires at least: 3.5
 Tested up to: 5.8
-Stable tag: 4.9.4
+Stable tag: 4.9.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -105,6 +105,11 @@ and will let you know what to do.
 2. Administrator area - nice and smooth
 
 == Changelog ==
+= 4.9.5 =
+* Image parser - now handles array (of images) values from custom field sources
+* Scrolling now does not trigger checkbox selection on mobile devices
+* Scrollbar script updated to a newer release (IE Edge only support)
+
 = 4.9.4 =
 * wp_get_attachment_image_url instead of the wp_get_attachment_url is used for custom field images so the size argument is applied to them
 * Fixed the issues with the new widgets screen, the styling should now correctly appear

@@ -78,23 +78,19 @@
 <?php
 // Search redirection, memorize general options
 if ( isset($style['_fo']) ) {
-    $_checked = array(
-        "set_exactonly" => isset($style['_fo']["set_exactonly"]) ? ' checked="checked"' : "",
-        "set_intitle" => isset($style['_fo']["set_intitle"]) ? ' checked="checked"' : "",
-        "set_incontent" => isset($style['_fo']["set_incontent"]) ? ' checked="checked"' : "",
-        "set_inexcerpt" => isset($style['_fo']["set_inexcerpt"]) ? ' checked="checked"' : "",
-        "set_inposts" => isset($style['_fo']["set_inposts"]) ? ' checked="checked"' : "",
-        "set_inpages" => isset($style['_fo']["set_inpages"]) ? ' checked="checked"' : "",
-    );
+	$_checked = array(
+		"set_exactonly" => in_array('exact', $style['_fo']['asl_gen']) ? ' checked="checked"' : "",
+		"set_intitle" => in_array('title', $style['_fo']['asl_gen']) ? ' checked="checked"' : "",
+		"set_incontent" => in_array('content', $style['_fo']['asl_gen']) ? ' checked="checked"' : "",
+		"set_inexcerpt" => in_array('excerpt', $style['_fo']['asl_gen']) ? ' checked="checked"' : ""
+	);
 } else {
-    $_checked = array(
-        "set_exactonly" => $style['exactonly'] == 1 ? ' checked="checked"' : "",
-        "set_intitle" => $style['searchintitle'] == 1 ? ' checked="checked"' : "",
-        "set_incontent" => $style['searchincontent'] == 1 ? ' checked="checked"' : "",
-        "set_inexcerpt" => $style['searchinexcerpt'] == 1 ? ' checked="checked"' : "",
-        "set_inposts" => in_array('post', $style['customtypes']) ? ' checked="checked"' : "",
-        "set_inpages" => in_array('page', $style['customtypes']) ? ' checked="checked"' : "",
-    );
+	$_checked = array(
+		"set_exactonly" => $style['exactonly'] == 1 ? ' checked="checked"' : "",
+		"set_intitle" => $style['searchintitle'] == 1 ? ' checked="checked"' : "",
+		"set_incontent" => $style['searchincontent'] == 1 ? ' checked="checked"' : "",
+		"set_inexcerpt" => $style['searchinexcerpt'] == 1 ? ' checked="checked"' : ""
+	);
 }
 
 if ( function_exists('qtranxf_getLanguage') ) {

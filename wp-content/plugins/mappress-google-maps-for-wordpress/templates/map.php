@@ -25,14 +25,13 @@
 </script>
 
 <script type='text/template' id='mapp-tmpl-map-header'>
-	<# var filter = !map.editable && map.query && mappl10n.options.filters && mappl10n.options.filters.length > 0; #>
-	<# var search = map.editable || (map.query && mappl10n.options.search); #>
-	<# if (search || filter) { #>
+	<# const isFilterable = map.isFilterable(); #>
+	<# const isSearchable = map.isSearchable(); #>
+	<# if (isSearchable || isFilterable) { #>
 		<div class='mapp-header'>
-			<# if (search) { #>
+			<# if (isSearchable) { #>
 				<div class='mapp-search'>
-					<input class='mapp-places' type='text' placeholder='<?php _e('Search', 'mappress-google-maps-for-wordpress'); ?>'/>
-					<!-- <div class='mapp-header-button mapp-search-button'></div>-->
+					<input class='mapp-places' type='text' placeholder='<?php _e('Search', 'mappress-google-maps-for-wordpress'); ?>' title='<?php _e('Enter an address, place, KML file URL, or lat,lng', 'mappress-google-maps-for-wordpress');?>'/>
 					<div class='mapp-header-button mapp-search-button'>
 						<# if (map.editable) { #>
 							+ <?php _e('Add to map', 'mappress-google-maps-for-wordpress'); ?>
@@ -42,7 +41,7 @@
 					</div>
 				</div>
 			<# } #>
-			<# if (filter) { #>
+			<# if (isFilterable) { #>
 				<div class='mapp-caret mapp-header-button mapp-filters-toggle' data-mapp-action='filters-toggle'><?php _e('Filter', 'mappress-google-maps-for-wordpress');?></div>
 			<# } #>
 		</div>

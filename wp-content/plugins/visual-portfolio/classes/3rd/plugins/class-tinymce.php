@@ -55,9 +55,11 @@ class Visual_Portfolio_3rd_TinyMCE {
             // Don't use WP_Query on the admin side https://core.trac.wordpress.org/ticket/18408 .
             $vp_query = get_posts(
                 array(
-                    'post_type'      => 'vp_lists',
-                    'posts_per_page' => -1,
-                    'paged'          => -1,
+                    'post_type'              => 'vp_lists',
+                    'posts_per_page'         => -1,
+                    'paged'                  => -1,
+                    'update_post_meta_cache' => false,
+                    'update_post_term_cache' => false,
                 )
             );
             foreach ( $vp_query as $post ) {
@@ -72,7 +74,7 @@ class Visual_Portfolio_3rd_TinyMCE {
                 return;
             }
 
-            wp_enqueue_script( 'visual-portfolio-tinymce-localize', visual_portfolio()->plugin_url . 'assets/admin/js/mce-localize.min.js', array(), '2.15.0', true );
+            wp_enqueue_script( 'visual-portfolio-tinymce-localize', visual_portfolio()->plugin_url . 'assets/admin/js/mce-localize.min.js', array(), '2.15.3', true );
             wp_localize_script( 'visual-portfolio-tinymce-localize', 'VPTinyMCEData', $data_tiny_mce );
         }
     }
